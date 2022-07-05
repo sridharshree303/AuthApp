@@ -44,9 +44,7 @@ const Login = () => {
         console.log(error.response);
         setCredentials("Enter proper credentials.");
       });
-      
   }
-
 
   return (
     <div className='App' style={{"backgroundColor":"rgb(11, 25, 28)"}}>
