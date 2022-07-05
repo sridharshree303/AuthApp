@@ -2,8 +2,11 @@
 const Logout = () => {
   sessionStorage.setItem('isUserLoggedIn',false);
   sessionStorage.clear();
-  // alert("**Logged out Successfully..");
-  window.location.assign('/');
+  setTimeout(function(){
+    alert("**Logged out Successfully..");
+    window.location.assign('/');
+  })
+  
   return null;
 }
 

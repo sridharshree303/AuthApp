@@ -6,6 +6,7 @@ import Home from './routes/Home';
 import Registerone from './routes/Registerone';
 import Logout from './routes/Logout';
 import DashBoard from './routes/DashBoard';
+import LoginOne from './routes/LoginOne';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/registerone' element={<Registerone/>}/>
           <Route path='/logout' element={<Logout/>}/>
           <Route path='/dashboard' element={<DashBoard/>}/>
+          <Route path='/loginone' element = {<LoginOne/>}/>
         </Routes>
       </Router>
     </div>

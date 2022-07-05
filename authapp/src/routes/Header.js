@@ -57,7 +57,7 @@ const Header = () => {
             
             <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto  " >
-                <Nav.Link  href="/login"><Button className="btn btn-info text-white mx-1 p-2 px-3 rounded-pill font-weight-bold">Log In</Button></Nav.Link>
+                <Nav.Link  href="/loginone"><Button className="btn btn-info text-white mx-1 p-2 px-3 rounded-pill font-weight-bold">Log In</Button></Nav.Link>
                 <Nav.Link  href="/registerone"><Button className="btn btn-info text-white p-2 px-3 rounded-pill font-weight-bold">SignUp</Button></Nav.Link>
             </Nav>
             <div className='p-2'>

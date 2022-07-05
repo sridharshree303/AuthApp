@@ -50,8 +50,8 @@ const Registerone = (props) => {
             setResData({});
             setTimeout(function(){
               alert('You are registered suceesfully..');
-              // reset();
-              // window.location.assign("/login");
+              reset();
+              window.location.assign("/loginone");
             }, 3000);
             // reset();
             // window.location.assign("/login");
@@ -82,7 +82,7 @@ const Registerone = (props) => {
       let errors = {};
       let passwordRegex = "^(?=.*[0-9])"
                 + "(?=.*[a-z])(?=.*[A-Z])"
-                + "(?=.*[@#$%^&+=])"
+                + "(?=.*[@!*#$%^&+=])"
                 + "(?=\\S+$).{8,16}$";
       // ^ represents starting character of the string.
       // (?=.*[0-9]) represents a digit must occur at least once.
@@ -127,7 +127,7 @@ const Registerone = (props) => {
         errors.username = "* Username is mandatory"
       }else if((fields["username"].length >1) && (fields["username"].length < 6)){
         errors.username = "* Username must be minimum 6 to 14 characters"
-      } else if(!(fields["username"].match("^[a-zA-Z0-9\\@]{6,14}$"))){
+      } else if(!(fields["username"].match("^[a-zA-Z0-9\\@]{6,20}$"))){
         errors.username = "* Enter a Valid Username"
       }
 
