@@ -1,11 +1,10 @@
 class UserData{
     userid = 0;
-    firstname;
-    lastname;
+    name;
     email;
     username;
     password;
-    mobileNumber;
+    mobileNumber=0;
 }
 
 export default UserData;

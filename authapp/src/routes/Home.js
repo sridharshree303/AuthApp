@@ -1,12 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Header from './Header';
+import Container from 'react-bootstrap/esm/Container';
 
 const Home = () => {
   return (
-    <div className='App'>
-      <h1>Home Page</h1>
-      <Link className='' to="/register"><button>Register</button></Link> &nbsp; &nbsp;
-      <Link to="/login"><button>Login</button></Link>
+    <div className='App' style={{"backgroundColor":"rgb(11, 25, 28)"}}>
+      <Header/>
+      <Container fluid  >
+      <div id="homecard">
+          <div className="card col-10 offset-1">
+              <div className="card-header bg-white">
+                  <h1 className='display-5 p-2' id="headercard">Home Page</h1>
+              </div>
+              <div className="card-body pt-4 pb-4">
+                 <h4 id="cardbodyh4">"Technology is best when it brings people together."</h4>
+                 <p id="cardbodyp"> --  Matt Mullenweg, Social Media Entrepreneur</p>
+                 <h4 id="cardbodyh4">"The Web as I envisaged it,we have not seen it yet.The future is still so _much bigger than the past."</h4>
+                 <p id="cardbodyp"> -- Tim Berners-Lee, Inventor of the World Wide Web</p>
+              </div>
+          </div>
+      </div>
+      </Container>
     </div>
   )
 }

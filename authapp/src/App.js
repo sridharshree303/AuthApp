@@ -1,9 +1,11 @@
 import './App.css';
 import React from 'react';
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
-import Register from './routes/Register';
 import Login from './routes/Login';
 import Home from './routes/Home';
+import Registerone from './routes/Registerone';
+import Logout from './routes/Logout';
+import DashBoard from './routes/DashBoard';
 
 function App() {
   return (
@@ -11,8 +13,10 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' exact element={<Home/>}/>
-          <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>
+          <Route path='/registerone' element={<Registerone/>}/>
+          <Route path='/logout' element={<Logout/>}/>
+          <Route path='/dashboard' element={<DashBoard/>}/>
         </Routes>
       </Router>
     </div>
