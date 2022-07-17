@@ -2,21 +2,22 @@ import './App.css';
 import React from 'react';
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 import Home from './routes/Home';
-import Registerone from './routes/Registerone';
+import Register from './routes/Register';
 import Logout from './routes/Logout';
 import DashBoard from './routes/DashBoard';
-import LoginOne from './routes/LoginOne';
+import Login from './routes/Login';
 
-function App() {
+const App = () => {
+  
   return (
     <div>
       <Router>
         <Routes>
           <Route path='/' exact element={<Home/>}/>
-          <Route path='/register' element={<Registerone/>}/>
+          <Route path='/register' element={<Register/>}/>
           <Route path='/logout' element={<Logout/>}/>
+          <Route path='/login' element = {<Login/>}/>
           <Route path='/dashboard' element={<DashBoard/>}/>
-          <Route path='/login' element = {<LoginOne/>}/>
         </Routes>
       </Router>
     </div>

@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from './Header';
+import Header from '../models/Header';
 import Container from 'react-bootstrap/esm/Container';
 
 const Home = () => {
   return (
-    <div className='App' style={{"backgroundColor":"rgb(11, 25, 28)"}}>
+    <div className='App' >
       <Header/>
       <Container fluid  >
       <div id="homecard">

@@ -2,6 +2,7 @@
   width: auto;
   height: auto;
   min-height: 100vh;
+  background-color: whitesmoke;
 }
 
 #containerpad{
@@ -13,8 +14,8 @@
 }
 
 #Navbar{
-  background-color: rgb(11, 77, 105);
-  
+  /* background-color: rgb(11, 77, 105); */
+  background-image: linear-gradient(to bottom right, #f05a2c, #e80883);
 }
 
 #searchbar{
@@ -24,8 +25,9 @@
 #searchicon{
   color: white;
   font-size: medium;
+  border: rgb(175, 6, 42);
   font-weight: bolder;
-  background-color: rgb(32, 199, 240);
+  background-color: rgb(4, 51, 160);
 }
 
 #suces{
@@ -45,7 +47,7 @@
 }
 
 #loginalign{
-  margin-top: 100px;
+  padding-top: 100px;
 }
 
 #homecard{
