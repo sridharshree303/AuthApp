@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useLocation } from 'react-router'
 import Header from '../models/Header'
 
@@ -12,7 +12,6 @@ const DashBoard = () => {
     <div >
       <Header/>
       <div className='text-center mt-5' style={{"color": "#f0582a"}}>
-        <h1 className='p-4'>DashBoard Component</h1>
         <h1 className='p-4'>Welcome {location.state.data.name}!</h1>
       </div>
     </div>

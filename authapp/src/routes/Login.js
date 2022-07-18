@@ -2,20 +2,18 @@ import Header from '../models/Header';
 import React, {useEffect, useState } from 'react'
 import Container from 'react-bootstrap/esm/Container';
 import axios from 'axios';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
 
-  const location =  useLocation();
-  // console.log(location.state)
-  
+ 
   const [userdata,setUserData] = useState({
     userid : 0,
     name:"",
     email:"",
-    username:location.state.username,
-    password:location.state.password,
+    username:"",
+    password:"",
     mobileNumber:""
   });
 
@@ -65,6 +63,8 @@ const Login = () => {
             // console.log(response.data);
             setResponse(response.data);
             sessionStorage.setItem('isUserLoggedIn',true);
+            sessionStorage.setItem('name',response.data);
+            localStorage.setItem('object',response.data.name);
             setResData({});
             setTimeout(function(){
                 // alert('Login Successful');

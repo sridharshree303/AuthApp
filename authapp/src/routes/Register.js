@@ -54,10 +54,7 @@ const Register = (props) => {
               // alert('You are registered suceesfully..');
               reset();
               // window.location.assign("/loginone");
-              navigate('/login',{state:{
-                username : userdata.username,
-                password: userdata.password
-              }})
+              navigate('/login')
             }, 1000);
           }
           ).catch((error)=>{
@@ -98,7 +95,7 @@ const Register = (props) => {
       // $ represents the end of the string.
       // sample password :Asdf@123
 
-      let emailregx = "^[A-Za-z0-9](?=\\S+$)(\\.?[a-zA-Z0-9]){8,}@[ge](oogle)?mail\\.com$";
+      let emailregx = "^[A-Za-z0-9](?=\\S+$)(\\.?[a-zA-Z]){3,}@[ge](oogle)?mail\\.com$";
 
       //first name
       if(!fields["name"]){
