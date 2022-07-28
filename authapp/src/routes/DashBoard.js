@@ -1,11 +1,19 @@
 import React from 'react'
-import Header from './Header'
+import { useLocation } from 'react-router'
+import Header from '../models/Header'
 
 const DashBoard = () => {
+
+  const location = useLocation();
+
+  // console.log(JSON.stringify(location.state));
+
   return (
-    <div>
+    <div >
       <Header/>
-      <h1>DashBoard Component</h1>
+      <div className='text-center mt-5' style={{"color": "#f0582a"}}>
+        <h1 className='p-4'>Welcome {location.state.data.name}!</h1>
+      </div>
     </div>
   )
 }
