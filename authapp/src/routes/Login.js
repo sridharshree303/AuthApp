@@ -82,7 +82,6 @@ const Login = () => {
 
         setResponse({});
         setIsSubmit(false);
-        // setCredentials("Enter proper credentials.");
       });
     }
     //eslint-disable-next-line 
