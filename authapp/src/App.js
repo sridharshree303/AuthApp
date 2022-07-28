@@ -6,26 +6,8 @@ import Register from './routes/Register';
 import Logout from './routes/Logout';
 import DashBoard from './routes/DashBoard';
 import Login from './routes/Login';
-import { msalApp,LOGIN_SCOPES,acquireToken,fetchAPI} from './auth-utils';
 
 class App extends Component {
-
-  constructor(props){
-    super(props);
-    this.showMessage = this.showMessage.bind(this);
-    this.state = {
-      apiCalled : false,
-      isLoggedIn : false
-    }
-  }
-
-  showMessage(){
-    console.log("Show message called!");
-
-    msalApp.loginPopup(LOGIN_SCOPES).then((loginResponse)=>{
-      console.log("Login Response = ",loginResponse);
-    })
-  }
 
   render(){
     return (
