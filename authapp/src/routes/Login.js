@@ -209,8 +209,8 @@ const Login = () => {
 
               <div className='row offset-1'>
                  <input className='btn btn-primary mt-2 mb-2 p-2 col-10 font-weight-bold' type="submit" value="Login"/>
-                 <small className='text-center col-10 p-1 mt-1 font-weight-bold'>Dont't have an account ? <Link to="/registerone" id="textdecor">Sign Up</Link></small> 
-                 <small className='text-center col-10 pb-2 font-weight-bold' > <Link to="/registerone" id="textdecor">Forgot Password ?</Link></small>
+                 <small className='text-center col-10 p-1 mt-1 font-weight-bold'>Dont't have an account ? <Link to="/register" id="textdecor">Sign Up</Link></small> 
+                 <small className='text-center col-10 pb-2 font-weight-bold' > <Link to="/register" id="textdecor">Forgot Password ?</Link></small>
               </div>
             </form> 
             </div>

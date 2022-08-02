@@ -1,6 +1,6 @@
 import React from 'react'
 import { useLocation } from 'react-router'
-import Header from '../models/Header'
+import Header from '../models/Header';
 
 const DashBoard = () => {
 

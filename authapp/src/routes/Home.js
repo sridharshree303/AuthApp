@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Header from '../models/Header';
 import Container from 'react-bootstrap/esm/Container';
 
