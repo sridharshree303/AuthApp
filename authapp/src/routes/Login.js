@@ -73,7 +73,7 @@ const Login = () => {
                   data : response.data,
                 }});
                 // window.location.assign("/dashboard");
-            },1000);
+            },1500);
       }).catch((error)=>{
         console.log(error.response);
         setResData(error.response);

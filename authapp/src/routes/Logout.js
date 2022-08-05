@@ -5,7 +5,7 @@ const Logout = () => {
   setTimeout(function(){
     // alert("**Logged out Successfully..");
     window.location.assign('/');
-  },500)
+  },1000)
   
   return null;
 }

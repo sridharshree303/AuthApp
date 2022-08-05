@@ -55,7 +55,7 @@ const Register = (props) => {
               reset();
               // window.location.assign("/loginone");
               navigate('/login')
-            }, 1000);
+            }, 1500);
           }
           ).catch((error)=>{
             console.log(error.response);
@@ -329,13 +329,7 @@ const Register = (props) => {
              </div>
 
               <div className='row offset-1 mb-2'>
-              {(Object.keys(errors).length === 0 && isSubmit)?
                   <input className='btn btn-primary mt-1 p-2 col-10 font-weight-bold' type="submit" value="Sign Up"/>
-                  :
-                  <input className='btn btn-primary mt-1 p-2 col-10 font-weight-bold' type="submit" value="Sign Up" disabled/>
-
-              }
-                 
                  <small className='text-center col-10 p-1 font-weight-bold'>Already have an account ? <Link to="/login">Log In</Link></small> 
               </div>
             </form>
