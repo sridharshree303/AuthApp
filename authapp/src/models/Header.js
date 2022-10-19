@@ -5,6 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
 import '../App.css';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 
@@ -57,11 +58,11 @@ const Header = () => {
             
             <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto  " >
-                <Nav.Link  href="/login"><Button className="btn btn-info mx-1 p-2 px-3 rounded-pill  " id="searchicon">Log In</Button></Nav.Link>
-                <Nav.Link  href="/register"><Button className="btn btn-info p-2 px-3 rounded-pill "  id="searchicon">SignUp</Button></Nav.Link>
+                <Link to="/login"><Button className="btn btn-info m-2 p-2 px-3 rounded-pill  " id="searchicon">Log In</Button></Link>
+                <Link to="/register"><Button className="btn btn-info m-2 p-2 px-3 rounded-pill "  id="searchicon">SignUp</Button></Link>
             </Nav>
             <div className='p-2'>
-            <Form className='d-flex px-1'>
+            <Form className='d-flex'>
                 <Form.Control
                     type="search"
                     placeholder="Search"
@@ -69,7 +70,7 @@ const Header = () => {
                     id="searchbar"
                     aria-label="Search"
                 />
-                <Button id="searchicon" className='btn btn-info rounded-pill px-3 p-1' variant="outline-success">Search</Button>
+                <Button id="searchicon" className='btn btn-info rounded-pill px-3' variant="outline-success">Search</Button>
             </Form>
             </div>
             </Navbar.Collapse>

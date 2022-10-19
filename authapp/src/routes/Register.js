@@ -94,7 +94,8 @@ const Register = (props) => {
       // $ represents the end of the string.
       // sample password :Asdf@123
 
-      let emailregx = "^[A-Za-z0-9](?=\\S+$)(\\.?[a-zA-Z]){3,}@[ge](oogle)?mail\\.com$";
+      // let emailregx = "^[A-Za-z0-9](?=\\S+$)(\\.?[a-zA-Z]){3,}@[ge](oogle)?mail\\.com$";
+      let emailregx = "^[a-zA-Z0-9+_.-]+@[ge](oogle)?mail\\.com$";
 
       //first name
       if(!fields["name"]){
@@ -105,14 +106,6 @@ const Register = (props) => {
         }
       }
 
-      // //last name
-      // if(!fields["lastname"]){
-      //   errors.lastname = "* Last name is required"
-      // }else if(typeof fields["lastname"] !== "undefined"){
-      //   if (!fields["lastname"].match(/^[a-zA-Z]+$/)) {
-      //     errors.lastname = "*Enter Only letters";
-      //   }
-      // }
 
       //email
       if (!fields["email"]) {
@@ -132,21 +125,33 @@ const Register = (props) => {
       }
 
       //password
-      // if(!fields["password"]){
-      //   errors.password = "*Cannot be empty"
-      // }
       if(!(fields["password"])){
-        errors.password = "* Password is mandatory"
-      }else if((fields["password"]).length >1 && (fields["password"]).length < 8){
-        // setData({errorStatus:true});
-        errors.password = "* Password length must be 8 to 15 characters"
+        setData({errorStatus:false});
+        errors.password = "* Password is mandatory";
       }
       else if(!(fields["password"].match(passwordRegex))){
         setData({errorStatus:true});
+        
+        if((fields["password"]).length >15 || (fields["password"]).length < 8){
+          errors.password1 = "* Password length must be 8 to 15 characters"
+        }
+
+        if(!(fields["password"]).match("(?=.*[0-9])")){
+          errors.password2 = "* Include atleast one number";
+        }
+
+        if(!(fields["password"]).match("(?=.*[a-z])(?=.*[A-Z])")){
+          errors.password3 = "* Include atleast one lowercase and uppercase letter"
+        }
+
+        if(!(fields["password"]).match("(?=.*[@!*#$%^&+=])")){
+          errors.password4 = "* special character that must occur at least once";
+        }
+        
       } else {
         setData({errorStatus:false})
       }
-      
+
       //mobile number
       if(!fields["mobileNumber"]){
         errors.mobileNumber = "* Enter Mobile Number"
@@ -156,13 +161,7 @@ const Register = (props) => {
       } 
         else if(!(fields["mobileNumber"]).match("^[6789][0-9]{9}")){
           errors.mobileNumber = "* Mobile Number must be 10 numbers"
-          // errors.mobileNumber1 = "* Enter without country code i.e +91 ";
       } 
-      
-
-      // else if(fields["mobileNumber"].length !== 10){
-      //   errors.mobileNumber = "* Mobile Number must be 10 numbers"
-      // }
       return errors;
     }
 
@@ -208,19 +207,6 @@ const Register = (props) => {
                   <small className="text-danger ">{errors.name}</small>
              </div>
             
-             {/* <div className="col-10  offset-1 pb-1">
-                <label htmlFor="lastname" className=" form-label h6">Last Name:</label>
-                <input type="text" 
-                    className=" form-control" 
-                    id="lastname"   
-                    name="lastname"
-                    value={userdata.lastname}
-                    autoComplete="off"
-                    // required= {true}
-                    onChange={onChangeHandler}/>
-                  <small className="text-danger">{errors.lastname}</small>
-             </div> */}
-             
             <div className="col-10  offset-1 pb-1">
                 <label htmlFor="email" className=" form-label h6">Email:</label>
                 <input type="email" 
@@ -283,10 +269,10 @@ const Register = (props) => {
                     <div>
                       {data.errorStatus ?
                         <div> 
-                          <small className="text-danger">* Password must be 8-16 characters</small><br/>
-                          <small className="text-danger">* Include atleast one lowercase and uppercase letter</small><br/>
-                          <small className="text-danger">* Include atleast one symbol i.e.@,#,$,%,^, & ,-,+,= </small><br/>
-                          <small className="text-danger">* Include atleast one number</small>
+                          {(errors.password1) !== null ? <div><small className="text-danger">{errors.password1}</small></div>: null}
+                          {(errors.password2) !== null ? <div><small className="text-danger">{errors.password2}</small></div>: null}
+                          {(errors.password3) !== null ? <div><small className="text-danger">{errors.password3}</small></div>: null}
+                          {(errors.password4) !== null ? <div><small className="text-danger">{errors.password4}</small></div>: null}
                         </div> 
                         : <small className="text-danger">{errors.password}</small>
                       }
